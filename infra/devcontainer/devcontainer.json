@@ -1,0 +1,34 @@
+{
+  "name": "TiffyThrifty Dev",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/deno:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "corepack enable && pnpm i && deno --version && node -v && pnpm -v",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "denoland.vscode-deno",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "github.copilot",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "deno.enable": true,
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "containerEnv": {
+    "FORCE_COLOR": "1"
+  },
+  "forwardPorts": [5173, 8787, 4242],
+  "remoteUser": "node"
+}
+
+
+
+It installs Node, Deno, pnpm, and your deps. You’re ready to dev in the browser."
